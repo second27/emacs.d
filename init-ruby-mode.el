@@ -1,6 +1,7 @@
 (require-package 'ruby-mode)
 (require-package 'flymake-ruby)
-(require-package 'rinari)
+(require 'feature-mode)
+(require 'rinari)
 (require-package 'ruby-compilation)
 (require-package 'inf-ruby)
 (require-package 'robe)
@@ -9,9 +10,21 @@
 (require-package 'haml-mode)
 (require-package 'mmm-mode)
 
-
 (eval-after-load 'rinari
-  '(diminish 'rinari-minor-mode "Rin"))
+  '(progn
+     (diminish 'rinari-minor-mode "Rin")
+     (define-key rinari-minor-mode-map (kbd "C-c r f") 'rinari-find-features)
+     (define-key rinari-minor-mode-map (kbd "C-c r m") 'rinari-find-model)
+     (define-key rinari-minor-mode-map (kbd "C-c r c") 'rinari-find-controller)
+     (define-key rinari-minor-mode-map (kbd "C-c r s") 'rinari-find-steps)
+     (define-key rinari-minor-mode-map (kbd "C-c r t") 'rinari-find-stylesheet)
+     (define-key rinari-minor-mode-map (kbd "C-c r r") 'rinari-find-rspec)
+     (define-key rinari-minor-mode-map (kbd "C-c r v") 'rinari-find-view)
+     (define-key rinari-minor-mode-map (kbd "C-c r h") 'rinari-find-helper)
+     (define-key rinari-minor-mode-map (kbd "C-c r p") 'rinari-find-file-in-project)
+     (define-key rinari-minor-mode-map (kbd "C-c r l") 'rinari-find-lib)
+     (define-key rinari-minor-mode-map (kbd "C-c r g") 'rinari-find-config)
+     ))
 
 (add-auto-mode 'ruby-mode
                "Rakefile\\'" "\\.rake\\'" "\.rxml\\'"

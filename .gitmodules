@@ -1,0 +1,6 @@
+[submodule "site-lisp/rinari"]
+	path = site-lisp/rinari
+	url = git@github.com:rushcut/rinari.git
+[submodule "site-lisp/feature-mode"]
+	path = site-lisp/feature-mode
+	url = git@github.com:rushcut/cucumber.el.git
