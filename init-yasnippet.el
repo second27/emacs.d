@@ -1,8 +1,12 @@
 (require-package 'yasnippet)
 
-;; Don't use yasnippet's trigger key, "TAB"
-(setq yas/trigger-key "")
+(setq yas/indent-line 'auto)
 (define-key global-map (kbd "M-RET") 'yas/expand)
+
+(add-hook 'yas-minor-mode-hook
+          (lambda () (define-key yas-minor-mode-map
+                       (kbd "TAB") nil)))
+
 (setq yas/next-field-key "C-p")
 (setq yas/next-field-key "C-n")
 
@@ -15,6 +19,5 @@
 (global-set-key (kbd "C-c y v") `yas-visit-snippet-file)
 (global-set-key (kbd "C-c y f") `yas/find-snippets)
 (global-set-key (kbd "C-c y r") `yas/reload-all)
-
 
 (provide 'init-yasnippet)
