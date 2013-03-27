@@ -40,5 +40,11 @@
 
 (setq dabbrev-friend-buffer-function 'sanityinc/dabbrev-friend-buffer)
 
+(defun auto-complete-mode-maybe ()
+    "No maybe for you. Only AC!"
+      (unless (minibufferp (current-buffer))
+            (auto-complete-mode 1)))
+
+(global-set-key (kbd "C-c TAB") 'hippie-expand)
 
 (provide 'init-auto-complete)

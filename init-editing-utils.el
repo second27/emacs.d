@@ -1,5 +1,6 @@
 (require-package 'unfill)
 (require-package 'whole-line-or-region)
+(require-package 'move-text)
 
 ;;----------------------------------------------------------------------------
 ;; Some basic preferences
@@ -63,7 +64,7 @@
 ;; Expand region
 ;;----------------------------------------------------------------------------
 (require-package 'expand-region)
-(global-set-key (kbd "M-p") 'er/expand-region)
+(global-set-key (kbd "M-o") 'er/expand-region)
 
 
 ;;----------------------------------------------------------------------------
@@ -258,5 +259,14 @@
         (sort-subr nil 'forward-line 'end-of-line nil nil
                    (lambda (s1 s2) (eq (random 2) 0)))))))
 
+
+;;----------------------------------------------------------------------------
+;; Move text
+;;----------------------------------------------------------------------------
+(global-unset-key (kbd "M-p"))
+(global-unset-key (kbd "M-n"))
+
+(global-set-key (kbd "M-p") 'move-text-up)
+(global-set-key (kbd "M-n") 'move-text-down)
 
 (provide 'init-editing-utils)

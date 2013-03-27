@@ -128,6 +128,8 @@
 ;;----------------------------------------------------------------------------
 (require 'init-yasnippet)
 (require 'init-sgml)
+(require 'init-tags)
+(require 'init-textmate)
 
 ;; Local Variables:
 ;; coding: utf-8
