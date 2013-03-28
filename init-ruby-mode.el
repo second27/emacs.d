@@ -24,6 +24,7 @@
      (define-key rinari-minor-mode-map (kbd "C-c r p") 'rinari-find-file-in-project)
      (define-key rinari-minor-mode-map (kbd "C-c r l") 'rinari-find-lib)
      (define-key rinari-minor-mode-map (kbd "C-c r g") 'rinari-find-config)
+     (define-key rinari-minor-mode-map (kbd "C-c r i") 'rinari-find-javascript)
      ))
 
 (add-auto-mode 'ruby-mode
